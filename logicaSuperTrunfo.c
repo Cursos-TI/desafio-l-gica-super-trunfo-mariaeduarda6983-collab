@@ -1,43 +1,106 @@
-#include <stdio.h>
+#incluir <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+inteiro principal() {
+    // Variáveis ​​das cartas
+    personagem códigoA[5],nomeA[30];
+    inteiro populacaoA;
+    flutuador áreaA,pibA;
 
-int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    personagem códigoB[5],nomeB[30];
+    inteiro populacaoB;
+    flutuador áreaB,pibB;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    inteiro opcao;
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("=== Cadastro da Carta 1 ===\n");
+    printf("Código: ");
+    scanf("%s",códigoA);
+    printf("Nome da Cidade: ");
+    scanf("%s",nomeA);
+    printf("População: ");
+    scanf("%d",&populacaoA);
+    printf("Área (km²): ");
+    scanf("%f",&áreaA);
+    printf("PIB (bilhões): ");
+    scanf("%f",&pibA);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("\n=== Cadastro da Carta 2 ===\n");
+    printf("Código: ");
+    scanf("%s",códigoB);
+    printf("Nome da Cidade: ");
+    scanf("%s",nomeB);
+    printf("População: ");
+    scanf("%d",&populacaoB);
+    printf("Área (km²): ");
+    scanf("%f",&áreaB);
+    printf("PIB (bilhões): ");
+    scanf("%f",&pibB);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    // MENU
+    printf("\n--- MENU DE COMPARAÇÃO ---\n");
+    printf("Escolha o ATRIBUTO para comparar:\n");
+    printf("1 - População\n");
+    printf("2 - Área territorial\n");
+    printf("3 - PIB\n");
+    printf("Opção: ");
+    scanf("%d",&opcao);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    trocar(opcao) {
+        caso 1:
+            printf("\nComparando População...\n");
+            se(populacaoA > populacaoB) {
+                printf("Vencedora: %s (Maior população)\n",nomeA);
+            }outro se(populacaoA < populacaoB) {
+                printf("Vencedora: %s (Maior população)\n",nomeB);
+            }outro{ 
+                printf("Empate em População! Comparando PIB...\n");
+                se(pibA > pibB)
+                    printf("Vencedora: %s (Maior PIB)\n",nomeA);
+                outro se(pibA < pibB)
+                    printf("Vencedora: %s (Maior PIB)\n",nomeB);
+                outro
+                    printf("Empate total!\n");
+            }
+            quebrar;
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+        caso 2:
+            printf("\nComparando Área territorial...\n");
+            se(áreaA > áreaB) {
+                printf("Vencedora: %s (área maior)\n",nomeA);
+            }outro se(áreaA < áreaB) {
+                printf("Vencedora: %s (área maior)\n",nomeB);
+            }outro{
+                printf("Empate em Área! Comparando População...\n");
+                se(populacaoA > populacaoB)
+                    printf("Vencedora: %s (Maior população)\n",nomeA);
+                outro se(populacaoA < populacaoB)
+                    printf("Vencedora: %s (Maior população)\n",nomeB);
+                outro
+                    printf("Empate total!\n");
+            }
+            quebrar;
 
-    return 0;
+        caso 3:
+            printf("\nComparando PIB...\n");
+            se(pibA > pibB) {
+                printf("Vencedora: %s (Maior PIB)\n",nomeA);
+            }outro se(pibA < pibB) {
+                printf("Vencedora: %s (Maior PIB)\n",nomeB);
+            }outro{
+                printf("Empate em PIB! Comparando Área...\n");
+                se(áreaA > áreaB)
+                    printf("Vencedora: %s (área maior)\n",nomeA);
+                outro se(áreaA < áreaB)
+                    printf("Vencedora: %s (área maior)\n",nomeB);
+                outro
+                    printf("Empate total!\n");
+            }
+            quebrar;
+
+        padrão:
+            printf("Opção inválida!\n");
+            quebrar;
+    }
+
+    retornar 0;
 }
